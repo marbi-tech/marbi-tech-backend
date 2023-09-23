@@ -30,7 +30,7 @@ const port = 3000;
 
 app.use("/api", contactRoutes);
 
-app.get("/api", (req: Request, res: Response) => {
+app.get("/", (req: Request, res: Response) => {
   res.send("Hello World!");
 });
 
