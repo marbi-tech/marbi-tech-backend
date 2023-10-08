@@ -1,3 +1,6 @@
-const allowedOrigins = ["https://marbitechin.com", "https://anotherdomain.com"];
+const allowedOrigins = [
+  "https://marbitechin.com",
+  "https://dev.marbitechin.com",
+];
 
 export { allowedOrigins };

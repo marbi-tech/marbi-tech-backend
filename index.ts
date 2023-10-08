@@ -1,5 +1,6 @@
 import cors from "cors";
 import dotenv from "dotenv";
+import serverlessHttp from "serverless-http";
 import express, { Request, Response } from "express";
 
 import { allowedOrigins } from "./src/config/cors";
@@ -26,14 +27,16 @@ const corsOptions: cors.CorsOptions = {
 // Use the CORS middleware with the configured options
 app.use(cors(corsOptions));
 
-const port = 3000;
-
 app.use("/api", contactRoutes);
 
 app.get("/", (req: Request, res: Response) => {
   res.send("Hello World!");
 });
 
-app.listen(port, () => {
-  console.log(`Server is listening at http://localhost:${port}`);
+app.listen(3000, () => {
+  console.log(`Server is listening at http://localhost:${3000}`);
 });
+
+const handler = serverlessHttp(app);
+
+export { handler };
